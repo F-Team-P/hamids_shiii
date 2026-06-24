@@ -14,7 +14,7 @@ get_header();
 
 			<div class="heading">
 				<span class="eyebrow"><?php esc_html_e( 'اخبار و مقالات', 'amlak-omid' ); ?></span>
-				<h2><?php is_home() ? esc_html_e( 'تازه‌های املاک امید', 'amlak-omid' ) : the_archive_title(); ?></h2>
+				<h1><?php is_home() ? esc_html_e( 'تازه‌های املاک امید', 'amlak-omid' ) : the_archive_title(); ?></h1>
 				<span class="rule"></span>
 			</div>
 
@@ -50,7 +50,7 @@ get_header();
 
 		<?php else : ?>
 			<div class="heading">
-				<h2><?php esc_html_e( 'موردی یافت نشد', 'amlak-omid' ); ?></h2>
+				<h1><?php esc_html_e( 'موردی یافت نشد', 'amlak-omid' ); ?></h1>
 				<p><?php esc_html_e( 'متأسفانه محتوایی برای نمایش وجود ندارد.', 'amlak-omid' ); ?></p>
 			</div>
 		<?php endif; ?>

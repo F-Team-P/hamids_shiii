@@ -15,14 +15,14 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<a class="sr-only" href="#main"><?php esc_html_e( 'پرش به محتوای اصلی', 'amlak-omid' ); ?></a>
+<a class="sr-only skip-link" href="#main"><?php esc_html_e( 'پرش به محتوای اصلی', 'amlak-omid' ); ?></a>
 
 <header class="site-header">
 	<div class="site-header__topbar">
 		<div class="container">
 			<div class="topbar__contact">
 				<span aria-hidden="true">📞</span>
-				<a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', amlak_omid_opt( 'amlak_phone', '02112345678' ) ) ); ?>">
+				<a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', amlak_omid_en_num( amlak_omid_opt( 'amlak_phone', '۰۲۱-۱۲۳۴۵۶۷۸' ) ) ) ); ?>">
 					<?php echo esc_html( amlak_omid_opt( 'amlak_phone', '۰۲۱-۱۲۳۴۵۶۷۸' ) ); ?>
 				</a>
 				<span>🕘 <?php echo esc_html( amlak_omid_opt( 'amlak_hours', 'شنبه تا پنجشنبه، ۹ تا ۲۰' ) ); ?></span>
@@ -65,7 +65,8 @@
 					echo '<li class="current-menu-item"><a href="' . esc_url( home_url( '/' ) ) . '">خانه</a></li>';
 					echo '<li><a href="' . esc_url( home_url( '/amlak' ) ) . '">املاک</a></li>';
 					echo '<li><a href="#services">خدمات</a></li>';
-					echo '<li><a href="#heritage">درباره ما</a></li>';
+					echo '<li><a href="#heritage">میراث ما</a></li>';
+					echo '<li><a href="#about">درباره ما</a></li>';
 					echo '<li><a href="#contact">تماس با ما</a></li>';
 					echo '</ul>';
 				}

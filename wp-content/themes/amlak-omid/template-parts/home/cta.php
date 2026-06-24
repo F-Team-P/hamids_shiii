@@ -11,6 +11,7 @@ $address = amlak_omid_opt( 'amlak_address', 'تهران، خیابان ولیع�
 $hours   = amlak_omid_opt( 'amlak_hours', 'شنبه تا پنجشنبه، ۹ تا ۲۰' );
 ?>
 <section class="section cta" id="contact" aria-labelledby="cta-title">
+	<div class="tile-band" aria-hidden="true"></div>
 	<div class="girih-bg" aria-hidden="true"></div>
 	<div class="container">
 		<div class="cta__inner">

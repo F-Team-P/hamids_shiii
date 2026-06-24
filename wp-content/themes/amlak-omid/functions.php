@@ -121,12 +121,68 @@ function amlak_omid_body_classes( $classes ) {
 add_filter( 'body_class', 'amlak_omid_body_classes' );
 
 /**
+ * Ensure the <html> lang stays Persian when the active locale is not Persian
+ * (e.g. a default en_US install used for a quick preview/demo), so it matches
+ * the hardcoded dir="rtl" and the Persian content. Mirrors the RTL body class.
+ */
+function amlak_omid_language_attributes( $output ) {
+	if ( 0 !== strpos( get_locale(), 'fa' ) ) {
+		if ( false !== strpos( $output, 'lang=' ) ) {
+			$output = preg_replace( '/lang="[^"]*"/', 'lang="fa-IR"', $output, 1 );
+		} else {
+			$output = trim( 'lang="fa-IR" ' . $output );
+		}
+	}
+	return $output;
+}
+add_filter( 'language_attributes', 'amlak_omid_language_attributes' );
+
+/**
  * Helper: convert western digits in a string to Persian digits for display.
  */
 function amlak_omid_fa_num( $string ) {
 	$western = array( '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' );
 	$persian = array( '۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹' );
 	return str_replace( $western, $persian, (string) $string );
+}
+
+/**
+ * Helper: convert Persian/Arabic-Indic digits in a string to western digits
+ * (needed for machine-readable contexts such as tel: links).
+ */
+function amlak_omid_en_num( $string ) {
+	$persian = array( '۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹' );
+	$arabic  = array( '٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩' );
+	$western = array( '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' );
+	return str_replace( array_merge( $persian, $arabic ), array_merge( $western, $western ), (string) $string );
+}
+
+/**
+ * Helper: current year in the Jalali (Persian) calendar.
+ *
+ * WordPress has no built-in Jalali calendar, so derive it from the Gregorian
+ * date. Keeps the footer copyright consistent with the heritage framing
+ * (founding ۱۳۵۴, timeline up to ۱۴۰۴) rather than printing a Gregorian year.
+ */
+function amlak_omid_jalali_year( $timestamp = null ) {
+	$timestamp = null === $timestamp ? time() : (int) $timestamp;
+	$gy = (int) wp_date( 'Y', $timestamp );
+	$gm = (int) wp_date( 'n', $timestamp );
+	$gd = (int) wp_date( 'j', $timestamp );
+
+	$g_d_m = array( 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334 );
+	$gy2   = ( $gm > 2 ) ? ( $gy + 1 ) : $gy;
+	$days  = 355666 + ( 365 * $gy ) + ( (int) ( ( $gy2 + 3 ) / 4 ) )
+		- ( (int) ( ( $gy2 + 99 ) / 100 ) ) + ( (int) ( ( $gy2 + 399 ) / 400 ) )
+		+ $gd + $g_d_m[ $gm - 1 ];
+	$jy    = -1595 + ( 33 * ( (int) ( $days / 12053 ) ) );
+	$days  %= 12053;
+	$jy    += 4 * ( (int) ( $days / 1461 ) );
+	$days  %= 1461;
+	if ( $days > 365 ) {
+		$jy += (int) ( ( $days - 1 ) / 365 );
+	}
+	return $jy;
 }
 
 /**

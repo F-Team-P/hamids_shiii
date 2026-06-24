@@ -4,7 +4,9 @@
 
   var toFa = function (n) {
     var fa = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-    return String(n).replace(/\d/g, function (d) { return fa[d]; });
+    // Map digits to Persian and the en-US grouping comma to the
+    // Persian thousands separator (U+066C) so counters read e.g. ۱۲٬۰۰۰.
+    return String(n).replace(/\d/g, function (d) { return fa[d]; }).replace(/,/g, '٬');
   };
 
   document.addEventListener('DOMContentLoaded', function () {

@@ -16,7 +16,7 @@ get_header();
 			?>
 			<article <?php post_class(); ?>>
 				<div class="heading">
-					<h2><?php the_title(); ?></h2>
+					<h1><?php the_title(); ?></h1>
 					<span class="rule"></span>
 				</div>
 				<div class="entry-content">

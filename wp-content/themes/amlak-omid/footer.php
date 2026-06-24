@@ -23,7 +23,8 @@
 					</span>
 					<p><?php esc_html_e( 'نیم قرن اعتماد، تخصص و همراهی در بازار املاک. آرامش شما، خانهٔ ماست.', 'amlak-omid' ); ?></p>
 					<span class="footer-seal">
-						⚜ <?php printf( esc_html__( 'تأسیس %s', 'amlak-omid' ), esc_html( amlak_omid_opt( 'amlak_year_founded', '۱۳۵۴' ) ) ); ?>
+						<img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/star8.svg' ) ); ?>" alt="" width="15" height="15" aria-hidden="true" />
+						<?php printf( esc_html__( 'تأسیس %s', 'amlak-omid' ), esc_html( amlak_omid_opt( 'amlak_year_founded', '۱۳۵۴' ) ) ); ?>
 					</span>
 				</div>
 
@@ -77,7 +78,7 @@
 				printf(
 					/* translators: 1: current year, 2: founding year. */
 					esc_html__( '© %1$s املاک امید — افتخار خدمت از سال %2$s', 'amlak-omid' ),
-					esc_html( amlak_omid_fa_num( wp_date( 'Y' ) ) ),
+					esc_html( amlak_omid_fa_num( amlak_omid_jalali_year() ) ),
 					esc_html( amlak_omid_opt( 'amlak_year_founded', '۱۳۵۴' ) )
 				);
 				?>

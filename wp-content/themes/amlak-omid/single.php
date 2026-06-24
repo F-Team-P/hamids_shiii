@@ -18,9 +18,10 @@ get_header();
 			<article <?php post_class(); ?>>
 				<div class="heading">
 					<?php if ( $is_property ) : ?>
-						<span class="eyebrow"><?php echo esc_html( get_the_term_list( get_the_ID(), 'property_location', '', '، ' ) ?: __( 'ملک', 'amlak-omid' ) ); ?></span>
+						<?php $amlak_loc = wp_strip_all_tags( get_the_term_list( get_the_ID(), 'property_location', '', '، ' ) ); ?>
+						<span class="eyebrow"><?php echo esc_html( $amlak_loc ? $amlak_loc : __( 'ملک', 'amlak-omid' ) ); ?></span>
 					<?php endif; ?>
-					<h2><?php the_title(); ?></h2>
+					<h1><?php the_title(); ?></h1>
 					<span class="rule"></span>
 				</div>
 

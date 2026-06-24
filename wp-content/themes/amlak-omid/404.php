@@ -12,7 +12,7 @@ get_header();
 	<div class="container" style="max-width:640px">
 		<div style="font-family:var(--font-display);font-size:6rem;color:var(--terracotta);line-height:1">۴۰۴</div>
 		<div class="heading">
-			<h2><?php esc_html_e( 'صفحه‌ای که دنبالش بودید پیدا نشد', 'amlak-omid' ); ?></h2>
+			<h1><?php esc_html_e( 'صفحه‌ای که دنبالش بودید پیدا نشد', 'amlak-omid' ); ?></h1>
 			<p><?php esc_html_e( 'شاید نشانی تغییر کرده باشد. بیایید به خانه برگردیم یا املاک موجود را ببینیم.', 'amlak-omid' ); ?></p>
 			<span class="rule"></span>
 		</div>
