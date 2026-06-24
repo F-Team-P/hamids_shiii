@@ -1,0 +1,16 @@
+/*
+Theme Name: Amlak Omid Classic — املاک امید (کلاسیک و فاخر)
+Theme URI: https://example.com/amlak-omid-classic
+Author: Amlak Omid
+Description: نسخهٔ «کلاسیک و فاخر» قالب فارسی و راست‌چین «املاک امید» — سرمه‌ای و طلایی، با تیترهای خوش‌نویسی نسخ و نشان موقر «تأسیس ۱۳۵۴». A deep-navy & gold, serif (naskh) prestige variant of the Amlak Omid RTL real-estate theme, celebrating 50+ years (est. 1354 / 1975).
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.5
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: amlak-omid
+Tags: rtl-language-support, custom-menu, featured-images, custom-logo, real-estate, persian
+*/
+
+.wp-block-button__link { border-radius: 6px; }

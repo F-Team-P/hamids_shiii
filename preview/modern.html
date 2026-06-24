@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>املاک امید (مدرن) | از سال ۱۳۵۴ در کنار شما</title>
+  <meta name="description" content="املاک امید — نیم قرن تجربه در خرید، فروش، رهن و اجاره املاک. تأسیس ۱۳۵۴.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../wp-content/themes/amlak-omid-modern/assets/css/main.css">
+  <!--
+    این فایل، پیش‌نمایش ایستا (static) از صفحهٔ نخست قالب وردپرسی «املاک امید» است
+    تا بدون نصب وردپرس قابل مشاهده باشد. خروجی واقعی وردپرس از فایل‌های PHP در
+    wp-content/themes/amlak-omid/ ساخته می‌شود و از همین CSS/JS استفاده می‌کند.
+  -->
+</head>
+<body class="rtl">
+
+  <a class="sr-only skip-link" href="#main">پرش به محتوای اصلی</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="site-header__topbar">
+      <div class="container">
+        <div class="topbar__contact">
+          <span aria-hidden="true">📞</span>
+          <a href="tel:02112345678">۰۲۱-۱۲۳۴۵۶۷۸</a>
+          <span>🕘 شنبه تا پنجشنبه، ۹ تا ۲۰</span>
+        </div>
+        <div class="topbar__social">
+          <a href="#" aria-label="اینستاگرام">اینستاگرام</a>
+          <a href="#" aria-label="تلگرام">تلگرام</a>
+          <a href="#" aria-label="واتساپ">واتساپ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="site-header__bar">
+        <a class="brand" href="#" aria-label="املاک امید — صفحه نخست">
+          <span class="brand__seal">
+            <img src="../wp-content/themes/amlak-omid-modern/assets/img/seal.svg" alt="" aria-hidden="true">
+          </span>
+          <span class="brand__name">
+            <b>املاک امید</b>
+            <small>تأسیس ۱۳۵۴</small>
+          </span>
+        </a>
+
+        <nav class="main-nav" id="primary-menu" aria-label="منوی اصلی">
+          <ul class="menu">
+            <li class="current-menu-item"><a href="#main">خانه</a></li>
+            <li><a href="#featured">املاک</a></li>
+            <li><a href="#services">خدمات</a></li>
+            <li><a href="#heritage">میراث ما</a></li>
+            <li><a href="#about">درباره ما</a></li>
+            <li><a href="#contact">تماس با ما</a></li>
+          </ul>
+        </nav>
+
+        <div class="header__actions">
+          <a class="btn btn--primary" href="#contact">مشاوره رایگان</a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="باز/بسته کردن منو">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="girih-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero__inner">
+          <div class="hero__text reveal">
+            <span class="hero__seal-badge">
+              <span class="dot" aria-hidden="true"></span>
+              تأسیس ۱۳۵۴ · بیش از ۵۰ سال اعتماد
+            </span>
+            <h1 id="hero-title">خانه‌ای که نسل‌هاست به آن اعتماد دارید</h1>
+            <p class="hero__lead">از سال ۱۳۵۴ تا امروز؛ نیم قرن تجربه در خرید، فروش، رهن و اجاره املاک — همراه شما، نسل به نسل.</p>
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="#properties">🏠 مشاهده املاک</a>
+              <a class="btn btn--ghost" href="#contact">تماس با مشاوران</a>
+            </div>
+          </div>
+
+          <div class="hero__visual reveal">
+            <div class="hero__frame">
+              <div class="hero__frame-content">
+                <span class="big-seal">
+                  <img src="../wp-content/themes/amlak-omid-modern/assets/img/seal.svg" alt="" aria-hidden="true">
+                </span>
+                <b>املاک امید</b>
+                <span>از سال ۱۳۵۴ در کنار شما</span>
+              </div>
+            </div>
+            <div class="hero__floating">
+              <span class="num">۵۰+</span>
+              <span class="lbl">سال تجربه<br>در بازار املاک</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="search-bar reveal" id="properties" data-demo onsubmit="return false">
+          <div class="search-bar__grid">
+            <div class="field">
+              <label for="deal">نوع معامله</label>
+              <select id="deal" name="deal">
+                <option value="">همه</option><option>خرید</option><option>رهن</option><option>اجاره</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="ptype">نوع ملک</label>
+              <select id="ptype" name="ptype">
+                <option value="">همه</option><option>آپارتمان</option><option>ویلایی</option><option>تجاری/اداری</option><option>زمین</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="area-loc">محله / منطقه</label>
+              <input type="text" id="area-loc" name="loc" placeholder="مثلاً: سعادت‌آباد">
+            </div>
+            <div class="field">
+              <label for="budget">بودجه (تومان)</label>
+              <select id="budget" name="budget">
+                <option value="">بدون محدودیت</option><option>تا ۲ میلیارد</option><option>۲ تا ۵ میلیارد</option><option>۵ تا ۱۰ میلیارد</option><option>بیش از ۱۰ میلیارد</option>
+              </select>
+            </div>
+            <button class="btn btn--gold" type="submit">🔍 جستجو</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="section stats" aria-label="آمار و دستاوردها">
+      <div class="tile-band" aria-hidden="true"></div>
+      <div class="girih-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="stats__grid">
+          <div class="stat reveal">
+            <div class="stat__num"><span data-count="50">۵۰</span><span class="suffix">+</span></div>
+            <div class="stat__label">سال تجربه و اعتماد</div>
+          </div>
+          <div class="stat reveal">
+            <div class="stat__num"><span data-count="12000">۱۲٬۰۰۰</span><span class="suffix">+</span></div>
+            <div class="stat__label">معاملهٔ موفق</div>
+          </div>
+          <div class="stat reveal">
+            <div class="stat__num"><span data-count="8500">۸٬۵۰۰</span><span class="suffix">+</span></div>
+            <div class="stat__label">مشتری راضی</div>
+          </div>
+          <div class="stat reveal">
+            <div class="stat__num"><span data-count="3">۳</span></div>
+            <div class="stat__label">نسل در خدمت شما</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HERITAGE TIMELINE ============ -->
+    <section class="section" id="heritage" aria-labelledby="heritage-title">
+      <div class="container">
+        <div class="heading reveal">
+          <span class="eyebrow">میراث ما</span>
+          <h2 id="heritage-title">نیم قرن، یک نام؛ یک تعهد</h2>
+          <p>داستان املاک امید، داستان اعتمادی است که نسل به نسل ساخته شده است. از سال ۱۳۵۴ تا امروز، نام ما ضامن آرامش شما در مهم‌ترین تصمیم‌های زندگی بوده است.</p>
+          <span class="rule"></span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item reveal"><span class="tl-item__dot"></span><div class="tl-card"><span class="year">۱۳۵۴</span><h3>آغاز راه</h3><p>بنگاه معاملات املاک امید با اعتماد و امانت‌داری در محله تأسیس شد.</p></div></div>
+          <div class="tl-item reveal"><span class="tl-item__dot"></span><div class="tl-card"><span class="year">۱۳۶۵</span><h3>گسترش فعالیت</h3><p>با افزایش مشتریان وفادار، دفتر به مکانی بزرگ‌تر منتقل و تیم مشاوران تقویت شد.</p></div></div>
+          <div class="tl-item reveal"><span class="tl-item__dot"></span><div class="tl-card"><span class="year">۱۳۸۰</span><h3>نسل دوم</h3><p>مدیریت به نسل دوم خانواده سپرده شد؛ تخصص پدر، با نگاه تازهٔ فرزندان.</p></div></div>
+          <div class="tl-item reveal"><span class="tl-item__dot"></span><div class="tl-card"><span class="year">۱۳۹۵</span><h3>املاک امید آنلاین</h3><p>راه‌اندازی سامانهٔ آنلاین و بانک اطلاعاتی گستردهٔ املاک برای خدمت سریع‌تر.</p></div></div>
+          <div class="tl-item reveal"><span class="tl-item__dot"></span><div class="tl-card"><span class="year">۱۴۰۴</span><h3>نیم قرن اعتماد</h3><p>امروز با بیش از ۵۰ سال تجربه و سه نسل، همچنان در کنار شما هستیم.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section section--cream2" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="heading reveal">
+          <span class="eyebrow">خدمات ما</span>
+          <h2 id="services-title">هر آنچه برای یک معاملهٔ مطمئن نیاز دارید</h2>
+          <p>از مشاوره تا امضای سند، در تمام مسیر کنار شماییم.</p>
+          <span class="rule"></span>
+        </div>
+        <div class="services__grid">
+          <article class="service-card reveal"><div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div><h3>خرید و فروش ملک</h3><p>یافتن بهترین گزینه برای خرید یا فروش، با قیمت‌گذاری منصفانه و مذاکرهٔ حرفه‌ای.</p></article>
+          <article class="service-card reveal"><div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 14h4"/></svg></div><h3>رهن و اجاره</h3><p>گستره‌ای از واحدهای مسکونی و تجاری برای رهن و اجاره، متناسب با بودجهٔ شما.</p></article>
+          <article class="service-card reveal"><div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div><h3>مشاوره سرمایه‌گذاری</h3><p>تحلیل بازار و معرفی فرصت‌های مطمئن برای سرمایه‌گذاری بلندمدت در املاک.</p></article>
+          <article class="service-card reveal"><div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v6c0 5-3.5 7.5-8 8-4.5-.5-8-3-8-8V7z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>کارشناسی و ارزیابی قیمت</h3><p>ارزیابی دقیق و کارشناسی ارزش ملک بر پایهٔ دادهٔ واقعی بازار منطقه.</p></article>
+          <article class="service-card reveal"><div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 21h20"/><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/></svg></div><h3>مشارکت در ساخت</h3><p>همراهی مالکان و سازندگان در پروژه‌های مشارکتی، از توافق تا تحویل.</p></article>
+          <article class="service-card reveal"><div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M5 3h9l5 5v13H5z"/><path d="M9 13h6"/><path d="M9 17h6"/></svg></div><h3>امور حقوقی و قراردادها</h3><p>تنظیم قراردادهای شفاف و پیگیری امور اداری و حقوقی تا انتقال سند.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED PROPERTIES ============ -->
+    <section class="section" id="featured" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="heading reveal">
+          <span class="eyebrow">املاک ویژه</span>
+          <h2 id="featured-title">منتخب پیشنهادهای ما برای شما</h2>
+          <p>گزیده‌ای از بهترین فرصت‌های روز بازار، گردآوری‌شده توسط مشاوران باتجربهٔ ما.</p>
+          <span class="rule"></span>
+        </div>
+        <div class="props__grid">
+          <article class="prop-card reveal"><div class="prop-card__media"><span class="prop-card__badge">فروش</span><span class="ph-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span></div><div class="prop-card__body"><span class="prop-card__loc">📍 سعادت‌آباد</span><h3>آپارتمان نوساز و لوکس</h3><div class="prop-card__feats"><span>📐 ۱۴۵ متر</span><span>🛏 ۳ خواب</span></div><div class="prop-card__foot"><span class="prop-card__price">۸٬۵۰۰٬۰۰۰٬۰۰۰ <small>تومان</small></span><a class="btn btn--ghost" href="#contact">جزئیات</a></div></div></article>
+          <article class="prop-card reveal"><div class="prop-card__media"><span class="prop-card__badge prop-card__badge--rent">اجاره</span><span class="ph-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span></div><div class="prop-card__body"><span class="prop-card__loc">📍 یوسف‌آباد</span><h3>واحد دنج با نور عالی</h3><div class="prop-card__feats"><span>📐 ۹۲ متر</span><span>🛏 ۲ خواب</span></div><div class="prop-card__foot"><span class="prop-card__price">۴۵٬۰۰۰٬۰۰۰ <small>تومان</small></span><a class="btn btn--ghost" href="#contact">جزئیات</a></div></div></article>
+          <article class="prop-card reveal"><div class="prop-card__media"><span class="prop-card__badge">فروش</span><span class="ph-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span></div><div class="prop-card__body"><span class="prop-card__loc">📍 نیاوران</span><h3>خانه ویلایی دوبلکس</h3><div class="prop-card__feats"><span>📐 ۳۲۰ متر</span><span>🛏 ۴ خواب</span></div><div class="prop-card__foot"><span class="prop-card__price">۲۸٬۰۰۰٬۰۰۰٬۰۰۰ <small>تومان</small></span><a class="btn btn--ghost" href="#contact">جزئیات</a></div></div></article>
+          <article class="prop-card reveal"><div class="prop-card__media"><span class="prop-card__badge prop-card__badge--rent">رهن</span><span class="ph-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span></div><div class="prop-card__body"><span class="prop-card__loc">📍 میدان ونک</span><h3>دفتر کار اداری</h3><div class="prop-card__feats"><span>📐 ۷۸ متر</span><span>🛏 ۲ اتاق</span></div><div class="prop-card__foot"><span class="prop-card__price">۱۲۰٬۰۰۰٬۰۰۰ <small>تومان</small></span><a class="btn btn--ghost" href="#contact">جزئیات</a></div></div></article>
+          <article class="prop-card reveal"><div class="prop-card__media"><span class="prop-card__badge">فروش</span><span class="ph-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span></div><div class="prop-card__body"><span class="prop-card__loc">📍 فرمانیه</span><h3>پنت‌هاوس رو به شهر</h3><div class="prop-card__feats"><span>📐 ۲۱۰ متر</span><span>🛏 ۳ خواب</span></div><div class="prop-card__foot"><span class="prop-card__price">۱۹٬۰۰۰٬۰۰۰٬۰۰۰ <small>تومان</small></span><a class="btn btn--ghost" href="#contact">جزئیات</a></div></div></article>
+          <article class="prop-card reveal"><div class="prop-card__media"><span class="prop-card__badge">فروش</span><span class="ph-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span></div><div class="prop-card__body"><span class="prop-card__loc">📍 سعادت‌آباد</span><h3>آپارتمان خانوادگی</h3><div class="prop-card__feats"><span>📐 ۱۲۰ متر</span><span>🛏 ۳ خواب</span></div><div class="prop-card__foot"><span class="prop-card__price">۶٬۲۰۰٬۰۰۰٬۰۰۰ <small>تومان</small></span><a class="btn btn--ghost" href="#contact">جزئیات</a></div></div></article>
+        </div>
+        <div class="props__more reveal"><a class="btn btn--primary" href="#contact">مشاهدهٔ همهٔ املاک</a></div>
+      </div>
+    </section>
+
+    <!-- ============ WHY US ============ -->
+    <section class="section why" id="about" aria-labelledby="why-title">
+      <div class="container">
+        <div class="why__inner">
+          <div class="why__text reveal">
+            <div class="heading" style="text-align:start;margin-inline:0">
+              <span class="eyebrow" style="margin-inline-start:0">چرا املاک امید؟</span>
+              <h2 id="why-title">تجربه‌ای که با هیچ‌کس قابل مقایسه نیست</h2>
+              <p style="margin:0">وقتی نیم قرن در کنار مردم بوده‌اید، اعتماد دیگر یک شعار نیست؛ یک سرمایه است. ما این سرمایه را با تخصص امروز ترکیب کرده‌ایم.</p>
+            </div>
+            <div class="why__list">
+              <div class="why-item"><span class="why-item__icon" style="font-size:1.5rem">🏛</span><div><h3>نیم قرن سابقه و اعتبار</h3><p>از سال ۱۳۵۴ تا امروز، نامی شناخته‌شده و مورد اعتماد در بازار املاک.</p></div></div>
+              <div class="why-item"><span class="why-item__icon" style="font-size:1.5rem">🤝</span><div><h3>امانت‌داری و شفافیت</h3><p>صداقت در قیمت‌گذاری و شفافیت کامل در قراردادها، اصل همیشگی ماست.</p></div></div>
+              <div class="why-item"><span class="why-item__icon" style="font-size:1.5rem">👥</span><div><h3>مشاوران متخصص و محلی</h3><p>تیمی از کارشناسان آشنا به محله که بهترین گزینه را به شما معرفی می‌کنند.</p></div></div>
+              <div class="why-item"><span class="why-item__icon" style="font-size:1.5rem">🗂</span><div><h3>بانک گستردهٔ املاک</h3><p>دسترسی به طیف وسیعی از فایل‌های به‌روز برای خرید، فروش و اجاره.</p></div></div>
+            </div>
+          </div>
+          <div class="why__art reveal" aria-hidden="true">
+            <div class="est"><span>افتخار خدمت از</span><b>۱۳۵۴</b><span>تاکنون</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section section--cream2" aria-labelledby="tst-title">
+      <div class="container">
+        <div class="heading reveal">
+          <span class="eyebrow">نظر مشتریان</span>
+          <h2 id="tst-title">اعتماد آن‌ها، افتخار ماست</h2>
+          <p>صدای کسانی که سال‌هاست همراه ما بوده‌اند.</p>
+          <span class="rule"></span>
+        </div>
+        <div class="tst__grid">
+          <figure class="tst-card reveal"><span class="quote">”</span><div class="stars" aria-label="۵ از ۵">★★★★★</div><blockquote style="margin:0;padding:0;border:0"><p>پدرم خانهٔ اولش را سال‌ها پیش از همین بنگاه خرید و حالا من هم خانهٔ خودم را با اعتماد کامل از املاک امید خریدم. سه نسل، یک اعتماد.</p></blockquote><figcaption class="tst-card__person"><span class="tst-card__avatar">م</span><span><b>مریم رضایی</b><small>خریدار آپارتمان</small></span></figcaption></figure>
+          <figure class="tst-card reveal"><span class="quote">”</span><div class="stars" aria-label="۵ از ۵">★★★★★</div><blockquote style="margin:0;padding:0;border:0"><p>برخورد صادقانه و مشاورهٔ دقیقشان باعث شد بدون هیچ دغدغه‌ای ملکم را بفروشم. واقعاً حرفه‌ای و قابل اعتماد بودند.</p></blockquote><figcaption class="tst-card__person"><span class="tst-card__avatar">ع</span><span><b>علی محمدی</b><small>فروشندهٔ ملک</small></span></figcaption></figure>
+          <figure class="tst-card reveal"><span class="quote">”</span><div class="stars" aria-label="۵ از ۵">★★★★★</div><blockquote style="margin:0;padding:0;border:0"><p>برای اجارهٔ دفتر کارمان چند جا رفتیم، اما تنها جایی که با صبر و حوصله بهترین گزینه را پیدا کرد، املاک امید بود.</p></blockquote><figcaption class="tst-card__person"><span class="tst-card__avatar">س</span><span><b>سحر کریمی</b><small>مستأجر تجاری</small></span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA / CONTACT ============ -->
+    <section class="section cta" id="contact" aria-labelledby="cta-title">
+      <div class="tile-band" aria-hidden="true"></div>
+      <div class="girih-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="cta__inner">
+          <div class="cta__text reveal">
+            <h2 id="cta-title">بیایید با هم خانهٔ آینده‌تان را پیدا کنیم</h2>
+            <p>یک تماس یا یک پیام کافی است. مشاوران باتجربهٔ ما با کمال میل و به‌صورت رایگان راهنمای شما خواهند بود.</p>
+            <ul class="cta__contacts">
+              <li><span class="ic" aria-hidden="true">📍</span><span><b>نشانی دفتر</b><small>تهران، خیابان ولیعصر، نبش کوچه امید، پلاک ۱۳۵۴</small></span></li>
+              <li><span class="ic" aria-hidden="true">📞</span><span><b>۰۲۱-۱۲۳۴۵۶۷۸</b><small>۰۹۱۲-۰۰۰۰۰۰۰</small></span></li>
+              <li><span class="ic" aria-hidden="true">🕘</span><span><b>ساعات کاری</b><small>شنبه تا پنجشنبه، ۹ تا ۲۰</small></span></li>
+            </ul>
+          </div>
+          <div class="contact-card reveal">
+            <h3>درخواست مشاورهٔ رایگان</h3>
+            <form class="contact-form" data-demo onsubmit="return false">
+              <div class="row">
+                <input type="text" name="name" placeholder="نام و نام خانوادگی" required>
+                <input type="tel" name="phone" placeholder="شمارهٔ تماس" required>
+              </div>
+              <input type="text" name="subject" placeholder="موضوع (خرید، فروش، اجاره…)">
+              <textarea name="message" placeholder="توضیح کوتاه دربارهٔ درخواست شما…"></textarea>
+              <button type="submit" class="btn btn--gold">ارسال درخواست</button>
+              <p class="form-note" hidden style="margin:0;color:var(--turquoise-dark);font-weight:700">✓ درخواست شما ثبت شد. به‌زودی با شما تماس می‌گیریم. (نمونهٔ نمایشی)</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="tile-band" aria-hidden="true"></div>
+    <div class="site-footer__main">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col footer-brand">
+            <span class="brand">
+              <span class="brand__seal">
+                <img src="../wp-content/themes/amlak-omid-modern/assets/img/seal.svg" alt="" aria-hidden="true">
+              </span>
+              <span class="brand__name"><b>املاک امید</b></span>
+            </span>
+            <p>نیم قرن اعتماد، تخصص و همراهی در بازار املاک. آرامش شما، خانهٔ ماست.</p>
+            <span class="footer-seal"> تأسیس ۱۳۵۴</span>
+          </div>
+          <div class="footer-col">
+            <h4>دسترسی سریع</h4>
+            <a href="#main">خانه</a><a href="#featured">املاک</a><a href="#services">خدمات ما</a><a href="#heritage">میراث ما</a><a href="#contact">تماس با ما</a>
+          </div>
+          <div class="footer-col">
+            <h4>خدمات</h4>
+            <a href="#services">خرید و فروش</a><a href="#services">رهن و اجاره</a><a href="#services">مشاوره سرمایه‌گذاری</a><a href="#services">کارشناسی قیمت</a><a href="#services">امور حقوقی و قراردادها</a>
+          </div>
+          <div class="footer-col">
+            <h4>تماس با ما</h4>
+            <ul class="footer-contact">
+              <li><span class="ic" aria-hidden="true">📍</span><span>تهران، خیابان ولیعصر، نبش کوچه امید، پلاک ۱۳۵۴</span></li>
+              <li><span class="ic" aria-hidden="true">📞</span><span>۰۲۱-۱۲۳۴۵۶۷۸</span></li>
+              <li><span class="ic" aria-hidden="true">✉️</span><span>info@amlak-omid.ir</span></li>
+              <li><span class="ic" aria-hidden="true">🕘</span><span>شنبه تا پنجشنبه، ۹ تا ۲۰</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="container">
+        <span>© ۱۴۰۵ املاک امید — افتخار خدمت از سال ۱۳۵۴</span>
+        <span>طراحی‌شده با ❤ برای آرامش شما</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="بازگشت به بالا">▲</button>
+
+  <script src="../wp-content/themes/amlak-omid-modern/assets/js/main.js"></script>
+</body>
+</html>

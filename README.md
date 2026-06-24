@@ -1,34 +1,50 @@
 # املاک امید | Amlak Omid
 
-قالب وردپرسی فارسی و **راست‌چین** برای آژانس املاک «**املاک امید**» با طراحی **سنتی ایرانی**
-(کاشی و گره‌چینی) و تأکید بر **میراث نیم‌قرنی** (تأسیس ۱۳۵۴).
+قالب وردپرسی فارسی و **راست‌چین** برای آژانس املاک «**املاک امید**» با تأکید بر
+**میراث نیم‌قرنی** (تأسیس ۱۳۵۴). این مخزن **سه نسخهٔ طراحی** از صفحهٔ نخست را ارائه می‌دهد.
 
-A Persian, **RTL** WordPress theme for the **Amlak Omid** real-estate agency, with a
-**traditional-Persian** look (tilework / girih motifs) celebrating **50+ years of heritage**
-(established **1354 / 1975**).
+A Persian, **RTL** WordPress theme for the **Amlak Omid** real-estate agency, celebrating
+**50+ years of heritage** (established **1354 / 1975**). This repo ships **three design
+variants** of the home page, each a complete, installable theme.
+
+---
+
+## 🎨 سه نسخه — Three variants
+
+| نسخه / Variant | پوشهٔ قالب / Theme folder | پیش‌نمایش / Preview | حال‌وهوا |
+|---|---|---|---|
+| **سنتی ایرانی** — Traditional Persian | `wp-content/themes/amlak-omid` | `preview/index.html` | فیروزه‌ای/خاک‌رس/طلایی، کاشی و گره‌چینی |
+| **کلاسیک و فاخر** — Classic prestige | `wp-content/themes/amlak-omid-classic` | `preview/classic.html` | سرمه‌ای و طلایی، خط نسخ (Amiri)، نشان ستون‌دار |
+| **مدرن** — Modern + heritage | `wp-content/themes/amlak-omid-modern` | `preview/modern.html` | سفید/فیروزه‌ای امروزی، نشان‌های طلایی میراث |
+
+> هر سه از **همان ساختار قالب و محتوا** استفاده می‌کنند و فقط در لایهٔ طراحی (رنگ، فونت،
+> نقش‌ها) تفاوت دارند. Each variant shares the same template structure and content and differs
+> only in the design layer (palette, fonts, motifs).
 
 ---
 
 ## 🚀 پیش‌نمایش سریع (بدون وردپرس) — Quick preview, no WordPress needed
 
-کافی است فایل زیر را در مرورگر باز کنید:
+برای مقایسهٔ هر سه نسخه، این صفحه را در مرورگر باز کنید:
 
 ```
-preview/index.html
+preview/compare.html
 ```
 
-این صفحهٔ ایستا دقیقاً همان صفحهٔ نخست قالب است و از همان CSS/JS واقعی استفاده می‌کند.
+یا هر نسخه را جداگانه: `preview/index.html` (سنتی)، `preview/classic.html` (کلاسیک)،
+`preview/modern.html` (مدرن). این صفحه‌های ایستا دقیقاً همان صفحهٔ نخست قالب‌ها هستند و از
+همان CSS/JS واقعی استفاده می‌کنند.
 
-> Just open **`preview/index.html`** in any browser. It is a static render of the home page
-> and uses the theme's real CSS/JS. (Web fonts load from Google Fonts, so use an internet
-> connection for the exact Persian typography; otherwise it falls back to Tahoma.)
+> Open **`preview/compare.html`** to compare all three, or open any variant directly. They are
+> static renders that use each theme's real CSS/JS. (Web fonts load from Google Fonts, so use an
+> internet connection for the exact Persian typography; otherwise it falls back to Tahoma.)
 
 برای اطمینان از بارگذاری فونت‌ها می‌توانید یک سرور محلی سبک اجرا کنید:
 
 ```bash
 # از ریشهٔ مخزن / from the repo root
 python3 -m http.server 8000
-# سپس باز کنید / then open:  http://localhost:8000/preview/
+# سپس باز کنید / then open:  http://localhost:8000/preview/compare.html
 ```
 
 ---
@@ -40,6 +56,11 @@ python3 -m http.server 8000
 ```
 wp-content/themes/amlak-omid/
 ```
+
+> برای نسخه‌های دیگر، نام پوشه را جایگزین کنید: `amlak-omid-classic` یا `amlak-omid-modern`.
+> هر سه را می‌توان هم‌زمان آپلود کرد و از **نمایش ← پوسته‌ها** بین آن‌ها جابه‌جا شد.
+> For the other variants, swap the folder name to `amlak-omid-classic` or `amlak-omid-modern`.
+> All three can be uploaded together and switched from *Appearance → Themes*.
 
 **روش ۱ — کپی مستقیم:** کل پوشهٔ `wp-content/themes/amlak-omid` را در نصب وردپرس خود کپی کنید.
 

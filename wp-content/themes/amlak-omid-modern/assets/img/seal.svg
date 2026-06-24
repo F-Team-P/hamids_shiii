@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="نشان املاک امید، تأسیس ۱۳۵۴">
+  <!-- Modern rounded-tile mark — teal tile, white house, gold door, est. ۱۳۵۴ -->
+  <rect x="6" y="6" width="88" height="88" rx="24" fill="#0d9488"/>
+  <g fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28,50 L50,31 L72,50"/>
+    <path d="M35,49 V70 H65 V49"/>
+  </g>
+  <rect x="45" y="57" width="10" height="13" rx="2" fill="#f0c75a"/>
+  <text x="50" y="86" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="12" font-weight="800" fill="#ffffff">۱۳۵۴</text>
+</svg>

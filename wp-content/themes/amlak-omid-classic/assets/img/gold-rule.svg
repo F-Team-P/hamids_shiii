@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="16" viewBox="0 0 36 16">
+  <!-- Refined gold rule with periodic lozenges (repeats horizontally) -->
+  <line x1="0" y1="8" x2="36" y2="8" stroke="#c9a227" stroke-width="1"/>
+  <g fill="none" stroke="#c9a227" stroke-width="1">
+    <path d="M18,3 L23,8 L18,13 L13,8 Z"/>
+    <path d="M0,3 L5,8 L0,13 L-5,8 Z"/>
+    <path d="M36,3 L41,8 L36,13 L31,8 Z"/>
+  </g>
+  <circle cx="9"  cy="8" r="1" fill="#c9a227"/>
+  <circle cx="27" cy="8" r="1" fill="#c9a227"/>
+</svg>

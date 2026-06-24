@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>املاک امید — سه نسخهٔ طراحی صفحهٔ نخست</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#1f2430; --soft:#5d6675; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:'Vazirmatn',Tahoma,sans-serif; color:var(--ink);
+      background:#f3f1ec; line-height:1.8; }
+    .wrap { max-width:1080px; margin-inline:auto; padding:clamp(28px,6vw,72px) clamp(16px,4vw,40px); }
+    header { text-align:center; margin-bottom:clamp(32px,5vw,56px); }
+    header .badge { display:inline-block; background:#fff; border:1px solid #e3ddcf;
+      color:#9a7a1d; font-weight:800; padding:.35rem 1rem; border-radius:999px; font-size:.9rem; }
+    header h1 { font-size:clamp(1.8rem,5vw,2.8rem); margin:.6rem 0 .3rem; }
+    header p { color:var(--soft); max-width:60ch; margin-inline:auto; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+    @media (max-width:820px){ .grid{ grid-template-columns:1fr; max-width:440px; margin-inline:auto; } }
+    .card { background:#fff; border-radius:18px; overflow:hidden; text-decoration:none; color:inherit;
+      box-shadow:0 10px 30px rgba(31,36,48,.10); border:1px solid #eee7da;
+      transition:transform .2s, box-shadow .2s; display:flex; flex-direction:column; }
+    .card:hover { transform:translateY(-6px); box-shadow:0 22px 50px rgba(31,36,48,.16); }
+    .swatch { height:150px; display:grid; place-items:center; position:relative; color:#fff; }
+    .swatch b { font-size:1.9rem; font-weight:900; text-shadow:0 2px 10px rgba(0,0,0,.25); }
+    .swatch .chips { position:absolute; inset-block-end:12px; inset-inline-start:12px; display:flex; gap:6px; }
+    .swatch .chips i { width:18px; height:18px; border-radius:50%; border:2px solid rgba(255,255,255,.7); display:block; }
+    .s-trad { background:linear-gradient(135deg,#0f8a8a,#1b3a6b); }
+    .s-classic { background:linear-gradient(135deg,#13253d,#0a1421); }
+    .s-modern { background:linear-gradient(150deg,#14b8a6,#0f766e); }
+    .body { padding:1.3rem 1.4rem 1.5rem; flex:1; display:flex; flex-direction:column; }
+    .body h2 { font-size:1.25rem; margin:0 0 .2rem; }
+    .body .tag { color:var(--soft); font-size:.85rem; font-weight:700; margin-bottom:.6rem; }
+    .body p { color:var(--soft); font-size:.95rem; margin:0 0 1.1rem; }
+    .body .go { margin-top:auto; font-weight:800; color:#0f766e; }
+    .s-classic ~ .body .go { color:#9a7a1d; }
+    footer { text-align:center; color:var(--soft); margin-top:clamp(32px,5vw,52px); font-size:.9rem; }
+    code { background:#fff; border:1px solid #e7e0d2; padding:.1rem .4rem; border-radius:6px; font-size:.85em; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="badge">⌂ املاک امید · تأسیس ۱۳۵۴</span>
+      <h1>سه نسخهٔ طراحی صفحهٔ نخست</h1>
+      <p>یک برند، سه حال‌وهوای بصری برای نمایش میراث نیم‌قرنی. روی هر کارت کلیک کنید تا پیش‌نمایش زندهٔ آن نسخه را ببینید.</p>
+    </header>
+
+    <div class="grid">
+      <a class="card" href="index.html">
+        <div class="swatch s-trad"><b>سنتی ایرانی</b>
+          <div class="chips"><i style="background:#0f8a8a"></i><i style="background:#c0562f"></i><i style="background:#c39b2e"></i></div>
+        </div>
+        <div class="body">
+          <h2>سنتی ایرانی</h2>
+          <div class="tag">فیروزه‌ای · خاک‌رس · طلایی · کاشی و گره‌چینی</div>
+          <p>گرم و اصیل؛ با نقش‌های هندسی ایرانی، مهر «تأسیس ۱۳۵۴» و تایم‌لاین میراث. (نسخهٔ اول)</p>
+          <span class="go">مشاهدهٔ پیش‌نمایش ←</span>
+        </div>
+      </a>
+
+      <a class="card" href="classic.html">
+        <div class="swatch s-classic"><b>کلاسیک و فاخر</b>
+          <div class="chips"><i style="background:#13253d"></i><i style="background:#c9a227"></i><i style="background:#f7f3ea"></i></div>
+        </div>
+        <div class="body">
+          <h2>کلاسیک و فاخر</h2>
+          <div class="tag">سرمه‌ای · طلایی · خط نسخ (Amiri) · نشان موقر</div>
+          <p>موقر و نهادینه؛ سرمه‌ای و طلایی با تیترهای خوش‌نویسی و نشان ستون‌دار کلاسیک.</p>
+          <span class="go">مشاهدهٔ پیش‌نمایش ←</span>
+        </div>
+      </a>
+
+      <a class="card" href="modern.html">
+        <div class="swatch s-modern"><b>مدرن</b>
+          <div class="chips"><i style="background:#14b8a6"></i><i style="background:#c69a3a"></i><i style="background:#0f172a"></i></div>
+        </div>
+        <div class="body">
+          <h2>مدرن با لمسهٔ میراثی</h2>
+          <div class="tag">سفید · فیروزه‌ای · نشان‌های طلایی میراث</div>
+          <p>تمیز و امروزی؛ فضای باز، گوشه‌های نرم و نشان‌های طلایی «۵۰+ سال» در کنار تایم‌لاین مینیمال.</p>
+          <span class="go">مشاهدهٔ پیش‌نمایش ←</span>
+        </div>
+      </a>
+    </div>
+
+    <footer>
+      هر سه نسخه قالب کامل و قابل‌نصب وردپرس هستند —
+      <code>wp-content/themes/amlak-omid*</code>. برای فونت دقیق فارسی، صفحه را با اینترنت باز کنید.
+    </footer>
+  </div>
+</body>
+</html>
