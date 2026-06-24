@@ -1,0 +1,21 @@
+/*
+Theme Name: Amlak Omid — املاک امید
+Theme URI: https://example.com/amlak-omid
+Author: Amlak Omid
+Description: قالب فارسی و راست‌چین برای آژانس املاک «املاک امید» با طراحی سنتی ایرانی (کاشی و گره‌چینی) و تأکید بر میراث نیم‌قرنی (تأسیس ۱۳۵۴). A traditional-Persian, RTL real-estate theme for Amlak Omid, celebrating 50+ years of heritage (est. 1354 / 1975).
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.5
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: amlak-omid
+Tags: rtl-language-support, custom-menu, featured-images, custom-logo, real-estate, persian
+*/
+
+/*
+  The full design system lives in assets/css/main.css (enqueued from
+  functions.php). This file only carries the required theme header plus a
+  couple of editor/admin niceties.
+*/
+.wp-block-button__link { border-radius: 10px; }
