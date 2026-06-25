@@ -9,12 +9,29 @@ A Persian, **RTL** WordPress theme for the **Amlak Omid** real-estate agency, wi
 
 ---
 
+## ✦ نسخهٔ «نفیس» (Royale) — a distinct luxury layout
+
+این شاخه علاوه بر قالب پایه، یک **چیدمان کاملاً متفاوت و لوکس** هم دارد: نسخهٔ **نفیس** با
+حال‌وهوای **شامپاینی و فاخر** — مشکیِ گرم (اسپرسو) و طلایی شامپاینی، خوش‌نویسی نستعلیق (Gulzar)،
+هیروی تمام‌صفحه با حباب‌های شامپاین، گالری افقی املاک، و چیدمان مجله‌ای. این نسخه صرفاً تغییر رنگ
+نیست؛ ساختار، تایپوگرافی و تعامل‌ها همگی نو هستند.
+
+- **قالب / Theme:** `wp-content/themes/amlak-omid-royale`
+- **پیش‌نمایش / Preview:** `preview/royale.html`
+
+> A wholly different, **champagne‑luxury** layout (the *Royale* variant): warm espresso black +
+> champagne gold, a Nastaliq wordmark, a full‑viewport cinematic hero with rising champagne
+> bubbles, a horizontal property collection, an expansive heritage statement and an editorial
+> services index. Not a recolor — new structure, type system and interactions.
+
+---
+
 ## 🚀 پیش‌نمایش سریع (بدون وردپرس) — Quick preview, no WordPress needed
 
-کافی است فایل زیر را در مرورگر باز کنید:
+این فایل‌ها را در مرورگر باز کنید: `preview/index.html` (سنتی) و `preview/royale.html` (نفیس/لوکس).
 
 ```
-preview/index.html
+preview/index.html     ·     preview/royale.html
 ```
 
 این صفحهٔ ایستا دقیقاً همان صفحهٔ نخست قالب است و از همان CSS/JS واقعی استفاده می‌کند.
