@@ -58,7 +58,7 @@ $nav_links = array(
 	</div>
 </header>
 
-<div class="r-overlay" id="r-overlay">
+<div class="r-overlay" id="r-overlay" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e( 'منوی اصلی', 'amlak-omid' ); ?>">
 	<button class="r-overlay__close" type="button" aria-label="<?php esc_attr_e( 'بستن منو', 'amlak-omid' ); ?>">&times;</button>
 	<?php
 	foreach ( $nav_links as $href => $label ) {

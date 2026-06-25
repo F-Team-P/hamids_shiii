@@ -5,7 +5,7 @@
  * @package Amlak_Omid_Royale
  */
 
-$years_exp = (int) amlak_omid_opt( 'amlak_years_exp', '50' );
+$years_exp = (int) amlak_omid_en_num( amlak_omid_opt( 'amlak_years_exp', '50' ) );
 
 $stats = array(
 	array( $years_exp, '+', 'سال تجربه' ),

@@ -25,11 +25,11 @@ function amlak_omid_customize_register( $wp_customize ) {
 		'panel' => 'amlak_omid_home',
 	) );
 
+	// Hero title/lead are intentionally part of the fixed Royale art-direction,
+	// so only the heritage values that the layout actually consumes are exposed.
 	$fields = array(
 		'amlak_year_founded'   => array( __( 'سال تأسیس (شمسی)', 'amlak-omid' ), '۱۳۵۴', 'text' ),
 		'amlak_years_exp'      => array( __( 'سال‌های تجربه (عدد)', 'amlak-omid' ), '50', 'text' ),
-		'amlak_hero_title'     => array( __( 'عنوان اصلی صفحه نخست', 'amlak-omid' ), 'خانه‌ای که نسل‌هاست به آن اعتماد دارید', 'text' ),
-		'amlak_hero_lead'      => array( __( 'توضیح زیر عنوان', 'amlak-omid' ), 'از سال ۱۳۵۴ تا امروز؛ نیم قرن تجربه در خرید، فروش، رهن و اجاره املاک — همراه شما، نسل به نسل.', 'textarea' ),
 	);
 
 	foreach ( $fields as $id => $cfg ) {

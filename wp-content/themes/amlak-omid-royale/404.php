@@ -16,7 +16,7 @@ get_header();
 		</div>
 		<div class="r-404__cta">
 			<a class="r-btn r-btn--solid" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'بازگشت به خانه', 'amlak-omid' ); ?></a>
-			<a class="r-btn" href="<?php echo esc_url( home_url( '/amlak' ) ); ?>"><?php esc_html_e( 'مشاهدهٔ مجموعه', 'amlak-omid' ); ?></a>
+			<a class="r-btn" href="<?php echo esc_url( get_post_type_archive_link( 'property' ) ? get_post_type_archive_link( 'property' ) : home_url( '/amlak' ) ); ?>"><?php esc_html_e( 'مشاهدهٔ مجموعه', 'amlak-omid' ); ?></a>
 		</div>
 	</div>
 </section>

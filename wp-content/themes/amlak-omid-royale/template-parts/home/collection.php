@@ -16,7 +16,7 @@ $query = new WP_Query( array( 'post_type' => 'property', 'posts_per_page' => 8, 
 				<h2 id="r-collection-title"><?php esc_html_e( 'نفیس‌ترین‌های این فصل', 'amlak-omid' ); ?></h2>
 				<p><?php esc_html_e( 'گزیده‌ای از املاک استثنایی، انتخاب‌شده با وسواس مشاوران ارشد ما.', 'amlak-omid' ); ?></p>
 			</div>
-			<a class="r-link" href="<?php echo esc_url( home_url( '/amlak' ) ); ?>"><?php esc_html_e( 'تمام مجموعه', 'amlak-omid' ); ?></a>
+			<a class="r-link" href="<?php echo esc_url( get_post_type_archive_link( 'property' ) ? get_post_type_archive_link( 'property' ) : home_url( '/amlak' ) ); ?>"><?php esc_html_e( 'تمام مجموعه', 'amlak-omid' ); ?></a>
 		</div>
 	</div>
 

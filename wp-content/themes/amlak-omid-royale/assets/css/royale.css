@@ -11,6 +11,7 @@
   --gold:       #c8a25f;
   --gold-bright:#e7cf9c;
   --gold-deep:  #8f6f33;
+  --gold-ink:   #785b27; /* AA-compliant gold for small text on ivory (5.48:1) */
   --pearl:      #f4ece0;
   --sand:       #c3b496;
   --sand-dim:   #94886f;
@@ -38,7 +39,7 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   font-size: 17px;
-  line-height: 1.95;
+  line-height: 1.7;
   font-weight: 300;
   color: var(--pearl);
   background: var(--espresso);
@@ -56,12 +57,22 @@ h1, h2, h3, h4 { margin: 0 0 .4em; font-family: var(--font-serif); font-weight: 
 .r-skip:focus { position: fixed; top: 14px; inset-inline-start: 14px; z-index: 300; width: auto; height: auto; clip: auto; overflow: visible; background: var(--gold); color: var(--espresso); padding: .7rem 1.2rem; font-weight: 700; }
 
 /* ---------- Champagne-foil text ---------- */
+/* Solid champagne colour by default; only go transparent (gradient-through-text)
+   where background-clip:text is actually supported, so headlines never vanish. */
 .r-foil {
   background: linear-gradient(100deg, #8f6f33, #e7cf9c 38%, #fff6e2 50%, #e7cf9c 62%, #8f6f33);
-  -webkit-background-clip: text; background-clip: text;
-  color: transparent; -webkit-text-fill-color: transparent;
-  background-size: 220% auto; animation: r-foil 7s linear infinite;
+  color: var(--gold-bright);
+  background-size: 220% auto;
 }
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .r-foil {
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; -webkit-text-fill-color: transparent;
+    animation: r-foil 7s linear infinite;
+  }
+}
+/* On the ivory light sections, darken the foil so the giant heritage year keeps contrast. */
+.r-section--light .r-foil { background: linear-gradient(100deg, #6f5526, #b9923f 40%, #8f6f33 50%, #b9923f 60%, #6f5526); }
 @keyframes r-foil { to { background-position: -220% center; } }
 
 /* ---------- Layout utilities ---------- */
@@ -75,7 +86,7 @@ h1, h2, h3, h4 { margin: 0 0 .4em; font-family: var(--font-serif); font-weight: 
   margin: 0 0 1.4rem;
 }
 .r-eyebrow::before { content: ""; width: 34px; height: 1px; background: currentColor; opacity: .7; }
-.r-section--light .r-eyebrow { color: var(--gold-deep); }
+.r-section--light .r-eyebrow { color: var(--gold-ink); }
 
 /* ---------- Buttons / links ---------- */
 .r-btn {
@@ -88,7 +99,7 @@ h1, h2, h3, h4 { margin: 0 0 .4em; font-family: var(--font-serif); font-weight: 
 .r-btn:hover { background: var(--gold); color: var(--espresso); }
 .r-btn--solid { background: var(--gold); color: var(--espresso); }
 .r-btn--solid:hover { background: var(--gold-bright); border-color: var(--gold-bright); }
-.r-section--light .r-btn { border-color: var(--gold-deep); color: var(--gold-deep); }
+.r-section--light .r-btn { border-color: var(--gold-deep); color: var(--gold-ink); }
 .r-section--light .r-btn:hover { background: var(--gold-deep); color: var(--ivory); }
 
 .r-link {
@@ -99,7 +110,7 @@ h1, h2, h3, h4 { margin: 0 0 .4em; font-family: var(--font-serif); font-weight: 
 .r-link::after { content: "←"; transition: transform .25s; }
 .r-link:hover { color: var(--gold-bright); }
 .r-link:hover::after { transform: translateX(-5px); }
-.r-section--light .r-link { color: var(--gold-deep); }
+.r-section--light .r-link { color: var(--gold-ink); }
 
 /* =============================================================
    NAV
@@ -169,7 +180,7 @@ h1, h2, h3, h4 { margin: 0 0 .4em; font-family: var(--font-serif); font-weight: 
 .r-hero .r-eyebrow { justify-content: center; }
 .r-hero .r-eyebrow::after { content: ""; width: 34px; height: 1px; background: currentColor; opacity: .7; }
 .r-hero__title { font-family: var(--font-serif); font-weight: 500; font-size: clamp(2.8rem, 8vw, 6.2rem); line-height: 1.08; color: var(--pearl); margin: 0; }
-.r-hero__wordmark { display: block; font-family: var(--font-script); font-size: clamp(3.4rem, 11vw, 8.5rem); line-height: 1.5; margin-bottom: .2rem; }
+.r-hero__wordmark { display: block; font-family: var(--font-script); font-size: clamp(3.4rem, 11vw, 8.5rem); line-height: 1.05; margin-bottom: .2rem; }
 .r-hero__sub { font-family: var(--font-serif); font-size: clamp(1.2rem, 2.6vw, 1.7rem); color: var(--sand); font-weight: 400; max-width: 34ch; margin: 1.6rem auto 0; line-height: 1.7; }
 .r-rule { width: 1px; height: 64px; margin: 2.2rem auto; background: linear-gradient(var(--gold), transparent); }
 .r-hero__since { font-family: var(--font-sans); font-size: .72rem; letter-spacing: .4em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; }
@@ -261,7 +272,7 @@ h1, h2, h3, h4 { margin: 0 0 .4em; font-family: var(--font-serif); font-weight: 
 .r-quote__mark { font-family: var(--font-serif); font-size: 7rem; line-height: .4; color: var(--gold-deep); opacity: .55; display: block; height: 3.2rem; }
 .r-quote__text { font-family: var(--font-serif); font-weight: 400; font-size: clamp(1.6rem, 4vw, 3rem); line-height: 1.55; color: var(--ink); max-width: 24ch; margin: 0 auto; }
 .r-quote__by { margin-top: 2rem; font-family: var(--font-sans); font-size: .8rem; letter-spacing: .14em; color: var(--ink-soft); }
-.r-quote__by b { color: var(--gold-deep); font-weight: 700; display: block; letter-spacing: .04em; font-size: 1rem; margin-bottom: .2rem; }
+.r-quote__by b { color: var(--gold-ink); font-weight: 700; display: block; letter-spacing: .04em; font-size: 1rem; margin-bottom: .2rem; }
 
 /* =============================================================
    INVITATION (concierge contact)
@@ -293,7 +304,7 @@ h1, h2, h3, h4 { margin: 0 0 .4em; font-family: var(--font-serif); font-weight: 
    ============================================================= */
 .r-footer { background: var(--espresso-3); color: var(--sand); position: relative; padding-block: clamp(56px, 7vw, 88px) 1.6rem; text-align: center; }
 .r-footer::before { content: ""; position: absolute; inset-block-start: 0; inset-inline: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: .6; }
-.r-footer__mark { font-family: var(--font-script); font-size: 2.6rem; color: var(--gold-bright); line-height: 1.4; }
+.r-footer__mark { font-family: var(--font-script); font-size: 2.6rem; color: var(--gold-bright); line-height: 1.1; }
 .r-footer__tag { color: var(--sand); max-width: 40ch; margin: .4rem auto 2rem; }
 .r-foot-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.6rem; margin-bottom: 1.6rem; }
 .r-foot-links a { font-family: var(--font-sans); font-size: .8rem; letter-spacing: .16em; text-transform: uppercase; color: var(--pearl); }
@@ -332,6 +343,10 @@ h1, h2, h3, h4 { margin: 0 0 .4em; font-family: var(--font-serif); font-weight: 
   .r-numbers { grid-template-columns: 1fr 1fr; }
   .r-scrollcue { display: none; }
   .r-estate { flex-basis: 80vw; }
+}
+/* Hide the decorative scroll cue on short/landscape viewports so it can't overlap the hero CTA. */
+@media (max-height: 640px) {
+  .r-scrollcue { display: none; }
 }
 
 /* ---------- Secondary templates (archive / single / page / 404) ---------- */

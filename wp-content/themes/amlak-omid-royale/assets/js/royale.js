@@ -19,43 +19,63 @@
       window.addEventListener('scroll', onScroll, { passive: true });
     }
 
-    /* ---- Mobile overlay menu ---- */
+    /* ---- Mobile overlay menu (with focus management) ---- */
     var burger = document.querySelector('.r-burger');
     var overlay = document.getElementById('r-overlay');
     var closeBtn = overlay && overlay.querySelector('.r-overlay__close');
+    var lastFocused = null;
+    var FOCUSABLE = 'a[href], button:not([disabled])';
     var setMenu = function (open) {
       if (!overlay) return;
       overlay.classList.toggle('open', open);
       if (burger) burger.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.body.style.overflow = open ? 'hidden' : '';
+      if (open) {
+        lastFocused = document.activeElement;
+        var first = overlay.querySelector(FOCUSABLE);
+        if (first) first.focus();
+      } else if (lastFocused && lastFocused.focus) {
+        lastFocused.focus();
+      }
     };
     if (burger && overlay) {
       burger.addEventListener('click', function () { setMenu(!overlay.classList.contains('open')); });
       if (closeBtn) closeBtn.addEventListener('click', function () { setMenu(false); });
       overlay.addEventListener('click', function (e) { if (e.target.tagName === 'A') setMenu(false); });
-      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+      document.addEventListener('keydown', function (e) {
+        if (!overlay.classList.contains('open')) return;
+        if (e.key === 'Escape') { setMenu(false); return; }
+        if (e.key === 'Tab') {
+          var items = overlay.querySelectorAll(FOCUSABLE);
+          if (!items.length) return;
+          var f = items[0], l = items[items.length - 1];
+          if (e.shiftKey && document.activeElement === f) { e.preventDefault(); l.focus(); }
+          else if (!e.shiftKey && document.activeElement === l) { e.preventDefault(); f.focus(); }
+        }
+      });
     }
 
-    /* ---- Champagne bubbles ---- */
-    var bubbles = document.querySelector('.r-hero__bubbles');
-    if (bubbles && !reduced) {
-      var count = window.innerWidth < 600 ? 14 : 28;
-      var frag = document.createDocumentFragment();
-      for (var i = 0; i < count; i++) {
-        var b = document.createElement('span');
-        b.className = 'r-bubble';
-        var size = 3 + Math.floor((i % 7) * 1.8) + (i % 3) * 2; // 3–18px, deterministic
-        var dur = 7 + (i % 9);            // 7–15s
-        var delay = -(i % 12) * 1.3;      // staggered, negative for instant fill
-        var left = (i * 37 + 11) % 100;   // spread across width
-        b.style.width = size + 'px';
-        b.style.height = size + 'px';
-        b.style.insetInlineStart = left + '%';
-        b.style.animationDuration = dur + 's';
-        b.style.animationDelay = delay + 's';
-        frag.appendChild(b);
-      }
-      bubbles.appendChild(frag);
+    /* ---- Champagne bubbles (fills every bubble layer: hero + invitation) ---- */
+    if (!reduced) {
+      document.querySelectorAll('.r-hero__bubbles').forEach(function (bubbles) {
+        var count = window.innerWidth < 600 ? 12 : 26;
+        var frag = document.createDocumentFragment();
+        for (var i = 0; i < count; i++) {
+          var b = document.createElement('span');
+          b.className = 'r-bubble';
+          var size = 3 + Math.floor((i % 7) * 1.8) + (i % 3) * 2; // 3–18px, deterministic
+          var dur = 7 + (i % 9);            // 7–15s
+          var delay = -(i % 12) * 1.3;      // staggered, negative for instant fill
+          var left = (i * 37 + 11) % 100;   // spread across width
+          b.style.width = size + 'px';
+          b.style.height = size + 'px';
+          b.style.insetInlineStart = left + '%';
+          b.style.animationDuration = dur + 's';
+          b.style.animationDelay = delay + 's';
+          frag.appendChild(b);
+        }
+        bubbles.appendChild(frag);
+      });
     }
 
     /* ---- Scroll reveal ---- */
