@@ -26,12 +26,30 @@ A Persian, **RTL** WordPress theme for the **Amlak Omid** real-estate agency, wi
 
 ---
 
+## ✦ نسخهٔ «پویا» (Motion) — an animation-driven layout
+
+نسخهٔ **پویا**: طراحی تیره و پرانرژی با **گرادیان متحرک (aurora)**، نوار پیشرفت اسکرول، تیتر
+**جنبشی (کلمه‌به‌کلمه)**، مارکی بی‌نهایت، شمارنده‌های حلقه‌ای، و **گالری افقی میخ‌شده** که با
+اسکرول حرکت می‌کند؛ به‌همراه کارت‌های سه‌بعدی، دکمه‌های مغناطیسی و خط‌زمانی خودکشیده. همهٔ
+انیمیشن‌ها با `prefers-reduced-motion` غیرفعال می‌شوند.
+
+- **قالب / Theme:** `wp-content/themes/amlak-omid-motion`
+- **پیش‌نمایش / Preview:** `preview/motion.html`
+
+> The **Motion** variant — a dark, energetic, animation-first layout: animated aurora gradient,
+> scroll-progress bar, kinetic word-by-word headline, infinite marquee, count-up rings, a
+> **scroll-pinned horizontal showcase**, 3D tilt cards, magnetic buttons and a self-drawing
+> timeline. All motion respects `prefers-reduced-motion`.
+
+---
+
 ## 🚀 پیش‌نمایش سریع (بدون وردپرس) — Quick preview, no WordPress needed
 
-این فایل‌ها را در مرورگر باز کنید: `preview/index.html` (سنتی) و `preview/royale.html` (نفیس/لوکس).
+این فایل‌ها را در مرورگر باز کنید: `preview/index.html` (سنتی)، `preview/royale.html` (نفیس)،
+`preview/motion.html` (پویا).
 
 ```
-preview/index.html     ·     preview/royale.html
+preview/index.html   ·   preview/royale.html   ·   preview/motion.html
 ```
 
 این صفحهٔ ایستا دقیقاً همان صفحهٔ نخست قالب است و از همان CSS/JS واقعی استفاده می‌کند.
