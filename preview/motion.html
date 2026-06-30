@@ -38,7 +38,7 @@
     </div>
   </header>
 
-  <div class="m-overlay" id="m-overlay">
+  <div class="m-overlay" id="m-overlay" role="dialog" aria-modal="true" aria-label="منوی اصلی">
     <a href="#showcase">املاک</a><a href="#heritage">میراث</a><a href="#services">خدمات</a><a href="#contact">تماس</a>
     <a href="#contact">مشاورهٔ رایگان</a>
   </div>
@@ -123,8 +123,9 @@
     <!-- HERITAGE -->
     <section class="m-section m-heritage" id="heritage" aria-labelledby="m-heritage-title">
       <div class="m-container">
-        <span class="m-eyebrow m-reveal">میراث ما</span>
-        <div class="m-odo m-grad-text m-reveal" id="m-heritage-title"><span data-count="50">۵۰</span>+</div>
+        <h2 class="sr-only" id="m-heritage-title">میراث ما — ۵۰+ سال در کنار شما</h2>
+        <span class="m-eyebrow m-reveal" aria-hidden="true">میراث ما</span>
+        <div class="m-odo m-grad-text m-reveal" aria-hidden="true"><span data-count="50">۵۰</span>+</div>
         <p class="m-heritage__sub m-reveal">سال در کنار شما — از ۱۳۵۴ تا امروز، نامی که نسل به نسل به آن اعتماد شده است.</p>
         <div class="m-timeline m-reveal" role="img" aria-label="خط زمانی میراث: ۱۳۵۴ تا ۱۴۰۴">
           <svg viewBox="0 0 960 160" preserveAspectRatio="xMidYMid meet">
@@ -149,12 +150,12 @@
           <p>از مشاوره تا امضای سند، در تمام مسیر کنار شماییم.</p>
         </div>
         <div class="m-serv__grid" data-stagger>
-          <article class="m-serv" data-tilt><div class="m-serv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div><h3>خرید و فروش</h3><p>یافتن بهترین گزینه با قیمت‌گذاری منصفانه و مذاکرهٔ حرفه‌ای.</p></article>
-          <article class="m-serv" data-tilt><div class="m-serv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 14h4"/></svg></div><h3>رهن و اجاره</h3><p>گستره‌ای از واحدهای مسکونی و تجاری، متناسب با بودجهٔ شما.</p></article>
-          <article class="m-serv" data-tilt><div class="m-serv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div><h3>مشاوره سرمایه‌گذاری</h3><p>تحلیل بازار و معرفی فرصت‌های مطمئن برای رشد سرمایه.</p></article>
-          <article class="m-serv" data-tilt><div class="m-serv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v6c0 5-3.5 7.5-8 8-4.5-.5-8-3-8-8V7z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>کارشناسی قیمت</h3><p>ارزیابی دقیق ارزش ملک بر پایهٔ دادهٔ واقعی بازار.</p></article>
-          <article class="m-serv" data-tilt><div class="m-serv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 21h20"/><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/></svg></div><h3>مشارکت در ساخت</h3><p>همراهی مالکان و سازندگان از توافق تا تحویل پروژه.</p></article>
-          <article class="m-serv" data-tilt><div class="m-serv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M5 3h9l5 5v13H5z"/><path d="M9 13h6"/><path d="M9 17h6"/></svg></div><h3>امور حقوقی و قرارداد</h3><p>تنظیم قراردادهای شفاف و پیگیری تا انتقال سند.</p></article>
+          <article class="m-serv" data-tilt><div class="m-serv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div><h3>خرید و فروش</h3><p>یافتن بهترین گزینه با قیمت‌گذاری منصفانه و مذاکرهٔ حرفه‌ای.</p></article>
+          <article class="m-serv" data-tilt><div class="m-serv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 14h4"/></svg></div><h3>رهن و اجاره</h3><p>گستره‌ای از واحدهای مسکونی و تجاری، متناسب با بودجهٔ شما.</p></article>
+          <article class="m-serv" data-tilt><div class="m-serv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div><h3>مشاوره سرمایه‌گذاری</h3><p>تحلیل بازار و معرفی فرصت‌های مطمئن برای رشد سرمایه.</p></article>
+          <article class="m-serv" data-tilt><div class="m-serv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v6c0 5-3.5 7.5-8 8-4.5-.5-8-3-8-8V7z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>کارشناسی قیمت</h3><p>ارزیابی دقیق ارزش ملک بر پایهٔ دادهٔ واقعی بازار.</p></article>
+          <article class="m-serv" data-tilt><div class="m-serv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 21h20"/><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/></svg></div><h3>مشارکت در ساخت</h3><p>همراهی مالکان و سازندگان از توافق تا تحویل پروژه.</p></article>
+          <article class="m-serv" data-tilt><div class="m-serv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M5 3h9l5 5v13H5z"/><path d="M9 13h6"/><path d="M9 17h6"/></svg></div><h3>امور حقوقی و قرارداد</h3><p>تنظیم قراردادهای شفاف و پیگیری تا انتقال سند.</p></article>
         </div>
       </div>
     </section>
@@ -170,8 +171,8 @@
           <figure class="m-tst__item active" style="margin:0"><blockquote class="m-tst__quote" style="margin:0;padding:0;border:0">«سه نسل از خانوادهٔ ما خانه‌هایشان را به املاک امید سپرده‌اند؛ اعتمادی که موروثی شده است.»</blockquote><figcaption class="m-tst__by"><b>مریم رضایی</b>خریدار آپارتمان</figcaption></figure>
           <figure class="m-tst__item" style="margin:0"><blockquote class="m-tst__quote" style="margin:0;padding:0;border:0">«تجربهٔ امروزی و سریع، اما با همان امانت‌داری قدیمی. دقیقاً همان چیزی که می‌خواستم.»</blockquote><figcaption class="m-tst__by"><b>علی محمدی</b>فروشندهٔ ملک</figcaption></figure>
           <figure class="m-tst__item" style="margin:0"><blockquote class="m-tst__quote" style="margin:0;padding:0;border:0">«برای اجارهٔ دفتر، تنها جایی بود که با صبر بهترین گزینه را پیدا کرد. حرفه‌ای و مدرن.»</blockquote><figcaption class="m-tst__by"><b>سحر کریمی</b>مستأجر تجاری</figcaption></figure>
-          <div class="m-tst__dots" role="tablist" aria-label="انتخاب نظر">
-            <button type="button" aria-label="نظر ۱"></button><button type="button" aria-label="نظر ۲"></button><button type="button" aria-label="نظر ۳"></button>
+          <div class="m-tst__dots" role="group" aria-label="انتخاب نظر">
+            <button type="button" aria-current="true" aria-label="نظر ۱"></button><button type="button" aria-label="نظر ۲"></button><button type="button" aria-label="نظر ۳"></button>
           </div>
         </div>
       </div>
@@ -184,7 +185,7 @@
           <div class="m-aurora" aria-hidden="true"><i></i><i></i><i></i></div>
           <h2 id="m-cta-title">آمادهٔ یافتن خانهٔ تازه‌اید؟</h2>
           <p>شماره‌تان را بگذارید؛ مشاوران ما به‌رایگان و در سریع‌ترین زمان با شما تماس می‌گیرند.</p>
-          <form class="m-cta__form" data-demo onsubmit="return false">
+          <form class="m-cta__form" data-demo action="#" method="post">
             <label class="sr-only" for="m-name">نام</label>
             <input id="m-name" type="text" name="name" placeholder="نام شما" required>
             <label class="sr-only" for="m-phone">تلفن</label>

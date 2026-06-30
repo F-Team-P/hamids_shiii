@@ -18,13 +18,14 @@
     var nav = document.querySelector('.m-nav');
     var toTop = document.querySelector('.m-top');
     var ticking = false;
+    var docScrollRange = 0;
+    var refreshRange = function () { docScrollRange = document.documentElement.scrollHeight - window.innerHeight; };
     var onScroll = function () {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(function () {
         var st = window.scrollY || window.pageYOffset;
-        var h = document.documentElement.scrollHeight - window.innerHeight;
-        var p = h > 0 ? st / h : 0;
+        var p = docScrollRange > 0 ? st / docScrollRange : 0;
         if (progress) progress.style.transform = 'scaleX(' + p.toFixed(4) + ')';
         if (nav) nav.classList.toggle('scrolled', st > 30);
         if (toTop) toTop.classList.toggle('show', st > 700);
@@ -33,29 +34,61 @@
       });
     };
 
-    /* ---- Mobile overlay ---- */
+    /* ---- Mobile overlay (with focus management) ---- */
     var burger = document.querySelector('.m-burger');
     var overlay = document.getElementById('m-overlay');
+    var lastFocus = null;
+    var focusables = function () {
+      return overlay ? Array.prototype.filter.call(
+        overlay.querySelectorAll('a[href], button:not([disabled])'),
+        function (el) { return el.offsetParent !== null; }
+      ) : [];
+    };
     var setMenu = function (open) {
       if (!overlay) return;
       overlay.classList.toggle('open', open);
       if (burger) burger.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.body.style.overflow = open ? 'hidden' : '';
+      if (open) {
+        lastFocus = document.activeElement;
+        var f = focusables();
+        if (f.length) f[0].focus();
+      } else if (lastFocus && typeof lastFocus.focus === 'function') {
+        lastFocus.focus();
+        lastFocus = null;
+      }
     };
     if (burger && overlay) {
       burger.addEventListener('click', function () { setMenu(!overlay.classList.contains('open')); });
       overlay.addEventListener('click', function (e) { if (e.target.tagName === 'A') setMenu(false); });
-      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+      document.addEventListener('keydown', function (e) {
+        if (!overlay.classList.contains('open')) return;
+        if (e.key === 'Escape') { setMenu(false); return; }
+        if (e.key === 'Tab') {
+          var f = focusables();
+          if (!f.length) { e.preventDefault(); return; }
+          var first = f[0], last = f[f.length - 1];
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+      });
     }
 
     /* ---- Hero spotlight (cursor) ---- */
     var hero = document.querySelector('.m-hero');
     var spot = hero && hero.querySelector('.m-hero__spot');
     if (hero && spot && fine && !reduced) {
+      var smx = 0, smy = 0, spotTick = false;
       hero.addEventListener('mousemove', function (e) {
-        var r = hero.getBoundingClientRect();
-        spot.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-        spot.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        smx = e.clientX; smy = e.clientY;
+        if (spotTick) return;
+        spotTick = true;
+        requestAnimationFrame(function () {
+          var r = hero.getBoundingClientRect();
+          spot.style.setProperty('--mx', (smx - r.left) + 'px');
+          spot.style.setProperty('--my', (smy - r.top) + 'px');
+          spotTick = false;
+        });
       });
     }
 
@@ -195,25 +228,39 @@
       track.style.transform = 'translateX(' + (rtl ? x : -x) + 'px)';
     };
 
-    /* ---- Card tilt ---- */
+    /* ---- Card tilt (rAF-coalesced) ---- */
     if (fine && !reduced) {
       document.querySelectorAll('[data-tilt]').forEach(function (card) {
+        var rect = null, raf = 0, mx = 0, my = 0;
+        card.addEventListener('mouseenter', function () { rect = card.getBoundingClientRect(); });
         card.addEventListener('mousemove', function (e) {
-          var r = card.getBoundingClientRect();
-          var rx = ((e.clientY - r.top) / r.height - 0.5) * -8;
-          var ry = ((e.clientX - r.left) / r.width - 0.5) * 8;
-          card.style.transform = 'perspective(800px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-6px)';
+          mx = e.clientX; my = e.clientY;
+          if (raf) return;
+          raf = requestAnimationFrame(function () {
+            raf = 0;
+            if (!rect) rect = card.getBoundingClientRect();
+            var rx = ((my - rect.top) / rect.height - 0.5) * -8;
+            var ry = ((mx - rect.left) / rect.width - 0.5) * 8;
+            card.style.transform = 'perspective(800px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-6px)';
+          });
         });
-        card.addEventListener('mouseleave', function () { card.style.transform = ''; });
+        card.addEventListener('mouseleave', function () { if (raf) { cancelAnimationFrame(raf); raf = 0; } card.style.transform = ''; });
       });
 
-      /* ---- Magnetic buttons ---- */
+      /* ---- Magnetic buttons (rAF-coalesced) ---- */
       document.querySelectorAll('.m-magnetic').forEach(function (btn) {
+        var rect = null, raf = 0, mx = 0, my = 0;
+        btn.addEventListener('mouseenter', function () { rect = btn.getBoundingClientRect(); });
         btn.addEventListener('mousemove', function (e) {
-          var r = btn.getBoundingClientRect();
-          btn.style.transform = 'translate(' + (e.clientX - r.left - r.width / 2) * 0.3 + 'px,' + (e.clientY - r.top - r.height / 2) * 0.4 + 'px)';
+          mx = e.clientX; my = e.clientY;
+          if (raf) return;
+          raf = requestAnimationFrame(function () {
+            raf = 0;
+            if (!rect) rect = btn.getBoundingClientRect();
+            btn.style.transform = 'translate(' + (mx - rect.left - rect.width / 2) * 0.3 + 'px,' + (my - rect.top - rect.height / 2) * 0.4 + 'px)';
+          });
         });
-        btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
+        btn.addEventListener('mouseleave', function () { if (raf) { cancelAnimationFrame(raf); raf = 0; } btn.style.transform = ''; });
       });
     }
 
@@ -224,14 +271,20 @@
       var dots = tst.querySelectorAll('.m-tst__dots button');
       var ti = 0, timer = null;
       var show = function (n) {
-        slides[ti].classList.remove('active'); if (dots[ti]) dots[ti].classList.remove('active');
+        slides[ti].classList.remove('active'); if (dots[ti]) { dots[ti].classList.remove('active'); dots[ti].removeAttribute('aria-current'); }
         ti = (n + slides.length) % slides.length;
-        slides[ti].classList.add('active'); if (dots[ti]) dots[ti].classList.add('active');
+        slides[ti].classList.add('active'); if (dots[ti]) { dots[ti].classList.add('active'); dots[ti].setAttribute('aria-current', 'true'); }
       };
       if (slides.length) {
         slides[0].classList.add('active'); if (dots[0]) dots[0].classList.add('active');
         dots.forEach(function (d, i) { d.addEventListener('click', function () { show(i); restart(); }); });
-        var restart = function () { if (reduced) return; clearInterval(timer); timer = setInterval(function () { show(ti + 1); }, 5000); };
+        var stop = function () { clearInterval(timer); timer = null; };
+        var restart = function () { if (reduced) return; stop(); timer = setInterval(function () { show(ti + 1); }, 5000); };
+        // WCAG 2.2.2: pause auto-rotation on hover and keyboard focus.
+        tst.addEventListener('mouseenter', stop);
+        tst.addEventListener('mouseleave', restart);
+        tst.addEventListener('focusin', stop);
+        tst.addEventListener('focusout', restart);
         restart();
       }
     }
@@ -250,10 +303,14 @@
     });
 
     /* ---- Wire up scroll + resize ---- */
-    measureShowcase();
+    // Re-sync after layout settles (font swap / full load) so the pinned-scroll
+    // geometry and progress range are measured against the final layout.
+    var resync = function () { measureShowcase(); refreshRange(); onScroll(); };
+    resync();
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(resync); }
+    window.addEventListener('load', resync);
     window.addEventListener('scroll', onScroll, { passive: true });
     var rt;
-    window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(measureShowcase, 200); });
-    onScroll();
+    window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(resync, 200); });
   });
 })();

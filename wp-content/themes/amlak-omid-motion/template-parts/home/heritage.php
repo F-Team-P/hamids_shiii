@@ -15,8 +15,9 @@ $nodes = array(
 ?>
 <section class="m-section m-heritage" id="heritage" aria-labelledby="m-heritage-title">
 	<div class="m-container">
-		<span class="m-eyebrow m-reveal"><?php esc_html_e( 'میراث ما', 'amlak-omid' ); ?></span>
-		<div class="m-odo m-grad-text m-reveal" id="m-heritage-title">
+		<h2 class="sr-only" id="m-heritage-title"><?php esc_html_e( 'میراث ما — ۵۰+ سال در کنار شما', 'amlak-omid' ); ?></h2>
+		<span class="m-eyebrow m-reveal" aria-hidden="true"><?php esc_html_e( 'میراث ما', 'amlak-omid' ); ?></span>
+		<div class="m-odo m-grad-text m-reveal" aria-hidden="true">
 			<span data-count="<?php echo esc_attr( $years_exp ); ?>"><?php echo esc_html( amlak_omid_fa_num( $years_exp ) ); ?></span>+
 		</div>
 		<p class="m-heritage__sub m-reveal"><?php esc_html_e( 'سال در کنار شما — از ۱۳۵۴ تا امروز، نامی که نسل به نسل به آن اعتماد شده است.', 'amlak-omid' ); ?></p>

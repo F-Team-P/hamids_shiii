@@ -25,9 +25,9 @@ $items = array(
 				</figure>
 			<?php endforeach; ?>
 
-			<div class="m-tst__dots" role="tablist" aria-label="<?php esc_attr_e( 'انتخاب نظر', 'amlak-omid' ); ?>">
+			<div class="m-tst__dots" role="group" aria-label="<?php esc_attr_e( 'انتخاب نظر', 'amlak-omid' ); ?>">
 				<?php foreach ( $items as $i => $t ) : ?>
-					<button type="button" aria-label="<?php printf( esc_attr__( 'نظر %s', 'amlak-omid' ), esc_attr( amlak_omid_fa_num( $i + 1 ) ) ); ?>"></button>
+					<button type="button"<?php echo 0 === $i ? ' aria-current="true"' : ''; ?> aria-label="<?php printf( esc_attr__( 'نظر %s', 'amlak-omid' ), esc_attr( amlak_omid_fa_num( $i + 1 ) ) ); ?>"></button>
 				<?php endforeach; ?>
 			</div>
 		</div>

@@ -72,7 +72,7 @@ $nav_links = array(
 	</div>
 </header>
 
-<div class="m-overlay" id="m-overlay">
+<div class="m-overlay" id="m-overlay" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e( 'منوی اصلی', 'amlak-omid' ); ?>">
 	<?php
 	foreach ( $nav_links as $href => $label ) {
 		printf( '<a href="%s">%s</a>', esc_attr( $href ), esc_html( $label ) );
